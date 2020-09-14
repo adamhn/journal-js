@@ -1,0 +1,111 @@
+/* Style Guidelines
+
+:::::Colors:::::
+Primary Green-like: #006d77
+Gray: #eeeeee
+Dark: #393e46
+Black: #222831
+
+:::::Available Weights:::::
+Light: 300
+Regular: 400
+Medium: 500
+Bold: 700
+
+*/
+
+
+/* Initial Setup  
+-----------------------------------------------------------------------------*/
+* { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 100%;
+    background-color: #fff;
+    color: #222831;
+}
+
+textarea:focus, input:focus, button:focus {
+    outline: none;
+}
+
+/* Headings */
+h1 {
+    font-size: 300%;
+}
+
+.title {
+    color: #006d77;
+    text-align: center;
+}
+
+/* Paragraphs */
+
+/* Header
+-----------------------------------------------------------------------------*/
+
+/* Footer
+-----------------------------------------------------------------------------*/
+
+/* Main
+-----------------------------------------------------------------------------*/
+.main-container {
+    margin: 5%;   
+}
+
+.entry-container {
+    width:80%;
+    max-width: 650px;
+    margin: 3% auto 0% auto;
+}
+
+.entry-textbox {
+    font-size:110%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.0625em;
+    width: 100%;
+    height: 200px;
+    background-color: #eeeeee;
+    border-radius: 8px;
+    padding: 15px;
+    display: block;
+    margin: 3% auto;
+    border: 2px solid #CCCCCC;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.entry-textbox:focus {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.entry-textbox::placeholder {
+    font-weight: 300;
+}
+
+/* Reusable Components 
+-----------------------------------------------------------------------------*/
+
+/* Buttons */
+.primary-button {
+    font-size: 115%;
+    padding: 10px 40px;
+    border-radius: 4px;
+    background-color: #006d77;
+    color: #fff;
+    float: right;
+}
+
+/* Text */
+.underline {
+    display:inline-block;
+    border-bottom: 5px solid #006d77;
+    padding-bottom:10px;
+}
