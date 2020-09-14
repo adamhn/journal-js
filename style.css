@@ -57,13 +57,13 @@ h1 {
 /* Main
 -----------------------------------------------------------------------------*/
 .main-container {
-    margin: 5%;   
-}
-
-.entry-container {
+    margin: 5% auto;
     width:80%;
     max-width: 650px;
-    margin: 3% auto 0% auto;
+}
+
+.input-section {
+    margin: 10% auto 0% auto;
 }
 
 .entry-textbox {
