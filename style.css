@@ -2,15 +2,21 @@
 
 :::::Colors:::::
 Primary Green-like: #006d77
+Light Gray: ##FAFAFA
 Gray: #eeeeee
 Dark: #393e46
 Black: #222831
 
 :::::Available Weights:::::
-Light: 300
-Regular: 400
-Medium: 500
-Bold: 700
+Montserrat:
+Light 300
+Regular 400
+Medium 500
+Bold 700
+
+Open Sans:
+Light 300
+Regular 400
 
 */
 
@@ -25,7 +31,7 @@ Bold: 700
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 100%;
     background-color: #fff;
@@ -68,17 +74,17 @@ h1 {
 
 .entry-textbox {
     font-size:110%;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    font-family: 'Open Sans', 'Montserrat', sans-serif;
+    font-weight: 400;
     letter-spacing: 0.0625em;
     width: 100%;
     height: 200px;
-    background-color: #eeeeee;
-    border-radius: 8px;
+    background-color: #FAFAFA;
+    border-radius: 6px;
     padding: 15px;
     display: block;
     margin: 3% auto;
-    border: 2px solid #CCCCCC;
+    border: 2px solid #eeeeee;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
@@ -100,7 +106,6 @@ h1 {
     border-radius: 4px;
     background-color: #006d77;
     color: #fff;
-    float: right;
 }
 
 /* Text */
@@ -108,4 +113,20 @@ h1 {
     display:inline-block;
     border-bottom: 5px solid #006d77;
     padding-bottom:10px;
+}
+
+/* Floating and clearing */
+.clear 
+    { 
+    clear:both; 
+} 
+
+.right 
+    { 
+    float: right; 
+} 
+
+.left 
+    { 
+    float: left; 
 }

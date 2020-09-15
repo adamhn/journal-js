@@ -7,7 +7,7 @@ function onEntrySubmit(event) {
 
     // Create a single entry element from text in input textbox
     const singleEntryEl = document.createElement("div");
-    singleEntryEl.className = "single-entry";
+    singleEntryEl.className = "single-entry clear";
     singleEntryEl.innerText = entryTextbox.value
     entriesSection.appendChild(singleEntryEl);
 }
