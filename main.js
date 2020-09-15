@@ -3,6 +3,7 @@
     // Variables
     //
     const entryForm = document.getElementById("entry-form");
+    const entryTitle = document.getElementsByClassName("entry-title")[0];
     const entryTextbox = document.getElementsByClassName("entry-textbox")[0];
     const entriesSection = document.getElementById("entries-section");
     const lastChangedSpan = document.getElementsByClassName("date-updated")[0];
@@ -18,10 +19,12 @@
         singleEntryEl.className = "single-entry clear";
         singleEntryEl.innerText = entryTextbox.value
         entriesSection.appendChild(singleEntryEl);
+        
+        clearEntryFields();
     }
 
     // Updates last changed date span 
-    function updateLastChanged() {
+    function updateLastChangedDate() {
         let nowDate = new Date();
         nowDate.toLocaleDateString('en-US', {
             month: 'long',
@@ -31,6 +34,12 @@
         });
 
         lastChangedSpan.textContent += nowDate.toLocaleString();
+    }
+
+    // Clear entry input fields
+    function clearEntryFields() {
+        entryTextbox.value = ""
+        entryTitle.value = ""
     }
 
     //
