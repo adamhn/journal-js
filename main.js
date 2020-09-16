@@ -142,5 +142,3 @@
     //
     entryForm.addEventListener("submit", onEntrySubmit);
 })();
-
-
