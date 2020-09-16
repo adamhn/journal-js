@@ -58,6 +58,24 @@ h1 {
 }
 
 /* Paragraphs */
+.builtby-text {
+  text-align: center;
+  margin-top: 20px;
+  color: #a9a9a9;
+}
+
+/* Links */
+a,
+a:visited {
+  color: #a9a9a9;
+  text-decoration: none;
+  border-bottom: 1px solid #a9a9a9;
+}
+
+a:hover {
+  border-bottom: 1px solid #006d77;
+  color: #006d77;
+}
 
 /* Header
 -----------------------------------------------------------------------------*/
