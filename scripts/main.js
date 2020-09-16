@@ -8,12 +8,14 @@
     const entryTextbox = document.querySelector(".entry-textbox");
 
     const lastChangedSpan = document.querySelector(".date-updated");
-
+    
     var entries = [];
-
+    readData();
+    updateEntries();
     //
     // Methods
     //
+
     function onEntrySubmit(event) {
         event.preventDefault();
 
@@ -32,30 +34,36 @@
             entryDate: getCurrentDateTime()
         }
 
-        entries.push(entry);   
+        entries.push(entry);
+        saveData();
     }
 
     function updateEntries() {
-        // Clear out entires from list in html dom 
+        // Clear out entires from list in html dom
         entriesList.innerHTML = "";
 
-        entries.forEach(entry => {
+        entries.forEach(function(entry, index)  {
             const displayEntryBtn = document.createElement("button");
             displayEntryBtn.className = "display-entry-button";
             displayEntryBtn.innerText = entry.entryDate;
-            entriesList.insertAdjacentElement('afterbegin', displayEntryBtn); // Insert at the start of entires
+            entriesList.appendChild(displayEntryBtn); // Insert at the start of entires
+
+            const deleteEntryBtn = document.createElement("button");
+            deleteEntryBtn.className = "delete-entry-button";
+            deleteEntryBtn.innerText = "Delete";
+            entriesList.appendChild(deleteEntryBtn); // Insert at the start of entires
 
             const singleEntryTitleEl = document.createElement("h3");
             singleEntryTitleEl.className = "single-entry title"
             singleEntryTitleEl.innerText = entry.entryTitle;
             singleEntryTitleEl.style.display = "none";
-            entriesList.insertAdjacentElement('afterbegin', singleEntryTitleEl);
+            entriesList.appendChild(singleEntryTitleEl);
 
             const singleEntryTextEl = document.createElement("div");
             singleEntryTextEl.className = "single-entry clear";
             singleEntryTextEl.innerText = entry.entryDescription
             singleEntryTextEl.style.display = "none";
-            entriesList.insertAdjacentElement('afterbegin', singleEntryTextEl);
+            entriesList.appendChild(singleEntryTextEl);
 
             displayEntryBtn.addEventListener("click", function() {
 
@@ -69,14 +77,46 @@
                 singleEntryTitleEl.style.display = "block";
                 singleEntryTextEl.style.display = "block";
             });
+
+            deleteEntryBtn.addEventListener("click", function() {
+                deleteAtIndex(index);
+            })
         })
 
-        updateLastChangedDate();
+        getLastChangedDate();
     }
 
-    // Updates last changed date span 
-    function updateLastChangedDate() {
-        lastChangedSpan.textContent = "Last updated: " + getCurrentDateTime();
+    function readData() {
+        let parsedEntries = JSON.parse(localStorage.getItem('entries'));
+
+        if (parsedEntries) {
+            entries = parsedEntries;
+        }
+
+        getLastChangedDate();
+    }
+
+    function saveData() {
+        localStorage.setItem('entries', JSON.stringify(entries));
+        localStorage.setItem('lastChangedDate', JSON.stringify(getCurrentDateTime()));
+    }
+
+    function deleteAtIndex(index) {
+        console.log("Want to delete at index: " + index);
+        entries.splice(index, 1);
+        saveData();
+        updateEntries();
+    }
+
+    function getLastChangedDate() {
+        let parsedDate = JSON.parse(localStorage.getItem('lastChangedDate'));
+
+        if (parsedDate) {
+            lastChangedSpan.textContent =  "Last updated: " + parsedDate;
+            console.log(parsedDate);
+        } else {
+            lastChangedSpan.textContent = "";
+        }
     }
 
     function clearInputFields() {

@@ -175,6 +175,24 @@ h1 {
     cursor: pointer;
 }
 
+.delete-entry-button {
+    position: relative;
+    top: -68px;
+    right: 20px;
+    padding: 10px;
+    background-color: #E94661;
+    color: #fff;
+    border-radius: 4px;
+    float: right;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.delete-entry-button:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
 /* Text */
 .underline {
     display:inline-block;
