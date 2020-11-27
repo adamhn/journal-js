@@ -1,4 +1,4 @@
-# journal-js
+# Journal JS
 Simple personal journal built with vanilla JavaScript. Local Storage is used to save entries.
 
 ## Features
